@@ -1,0 +1,35 @@
+/* TEAM */
+
+Developer:
+Chinmaya Kumar Das
+
+Role:
+AI Engineer
+Full Stack Developer
+Product Engineer
+
+Website:
+https://chinmayakumardas.com
+
+GitHub:
+https://github.com/chinmayakumardas
+
+LinkedIn:
+https://linkedin.com/in/chinmayakumardas2
+
+X:
+https://x.com/chinmayakmdas
+
+/* SITE */
+
+Framework:
+Next.js 15
+
+Language:
+TypeScript
+
+Styling:
+Tailwind CSS
+
+Deployment:
+Vercel

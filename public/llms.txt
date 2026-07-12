@@ -1,0 +1,39 @@
+# Chinmaya Kumar Das
+
+Official website:
+https://chinmayakumardas.com
+
+Name:
+Chinmaya Kumar Das
+
+Title:
+AI Engineer
+Full Stack Developer
+Product Engineer
+
+Description:
+Chinmaya Kumar Das builds AI-powered applications, SaaS products, modern web platforms, scalable APIs, automation systems, and cloud-native software.
+
+Skills
+
+- Artificial Intelligence
+- Generative AI
+- AI Agents
+- Prompt Engineering
+- Next.js
+- React
+- TypeScript
+- Node.js
+- Python
+- FastAPI
+- PostgreSQL
+- MongoDB
+- Docker
+- AWS
+
+Links
+
+Website: https://chinmayakumardas.com
+GitHub: https://github.com/chinmayakumardas
+LinkedIn: https://linkedin.com/in/chinmayakumardas2
+X: https://x.com/chinmayakmdas
