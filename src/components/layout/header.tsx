@@ -64,58 +64,59 @@ export default function Header() {
   }, []);
 
   // GSAP Smooth Menu Animation
-  useEffect(() => {
-    if (!menuRef.current || !overlayRef.current) return;
+useEffect(() => {
+  if (!menuRef.current || !overlayRef.current) return;
 
-    const tl = gsap.timeline();
+  const tl = gsap.timeline();
 
-    if (isMobileMenuOpen) {
-      gsap.set(overlayRef.current, { opacity: 0 });
-      gsap.set(menuRef.current, { y: 60, opacity: 0 });
+  if (isMobileMenuOpen) {
+    gsap.set(overlayRef.current, { opacity: 0 });
+    gsap.set(menuRef.current, { y: 60, opacity: 0 });
 
-      tl.to(overlayRef.current, {
+    tl.to(overlayRef.current, {
+      opacity: 1,
+      duration: 0.4,
+      ease: "power2.inOut",
+    }).to(
+      menuRef.current,
+      {
+        y: 0,
         opacity: 1,
-        duration: 0.4,
-        ease: "power2.inOut",
-      }).to(
-        menuRef.current,
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: "power3.out",
-        },
-        "-=0.15"
-      );
-
-      gsap.from(".menu-item", {
-        opacity: 0,
-        y: 50,
-        stagger: 0.07,
-        duration: 0.65,
+        duration: 0.6,
         ease: "power3.out",
-        delay: 0.25,
-      });
-    } else {
-      tl.to(menuRef.current, {
-        y: 40,
+      },
+      "-=0.15"
+    );
+
+    gsap.from(".menu-item", {
+      opacity: 0,
+      y: 50,
+      stagger: 0.07,
+      duration: 0.65,
+      ease: "power3.out",
+      delay: 0.25,
+    });
+  } else {
+    tl.to(menuRef.current, {
+      y: 40,
+      opacity: 0,
+      duration: 0.45,
+      ease: "power2.in",
+    }).to(
+      overlayRef.current,
+      {
         opacity: 0,
-        duration: 0.45,
+        duration: 0.35,
         ease: "power2.in",
-      }).to(
-        overlayRef.current,
-        {
-          opacity: 0,
-          duration: 0.35,
-          ease: "power2.in",
-        },
-        "-=0.2"
-      );
-    }
+      },
+      "-=0.2"
+    );
+  }
 
-    return () => tl.kill();
-  }, [isMobileMenuOpen]);
-
+  return () => {
+    tl.kill();
+  };
+}, [isMobileMenuOpen]);
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-transparent">
       <div
