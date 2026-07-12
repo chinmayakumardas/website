@@ -149,19 +149,21 @@ useEffect(() => {
         </nav>
 
         {/* DESKTOP CONTACT */}
-        <button
-          onClick={() => handleScroll("contact")}
-          className="hidden lg:inline-flex items-center gap-2 group"
-        >
-          <TextRoll className="text-[13px] font-bold uppercase tracking-[0.22em]">
-            CONTACT ME
-          </TextRoll>
-          <ArrowUpRight
-            size={18}
-            className="transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:rotate-45"
-          />
-        </button>
+        
+<button
+  onClick={() => handleScroll("contact")}
+  className="hidden lg:inline-flex relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer bg-primary text-secondary"
+>
+  <span className="relative z-10 transition-all duration-500 flex items-center">
+    <TextRoll className="text-[13px] font-bold uppercase tracking-[0.22em]">
+        CONTACT&nbsp;ME
+    </TextRoll>
+  </span>
 
+  <span className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+    <ArrowUpRight size={16} />
+  </span>
+</button>
         {/* HAMBURGER */}
         <button
           onClick={toggleMenu}
@@ -202,18 +204,23 @@ useEffect(() => {
           ))}
         </nav>
 
+       
         <div className="mt-auto pb-20">
-          <button
-            onClick={() => handleScroll("contact")}
-            className="menu-item flex items-center gap-4 text-3xl font-bold uppercase tracking-widest group"
-          >
-            <TextRoll center>CONTACT ME</TextRoll>
-            <ArrowUpRight
-              size={34}
-              className="group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:rotate-45 transition-all"
-            />
-          </button>
-        </div>
+  <button
+    onClick={() => handleScroll("contact")}
+    className="relative flex items-center text-sm font-medium rounded-full h-14 p-1 ps-7 pe-16 group transition-all duration-500 hover:ps-16 hover:pe-7 w-fit overflow-hidden cursor-pointer bg-primary text-secondary"
+  >
+    <span className="relative z-10 transition-all duration-500 flex items-center">
+      <TextRoll className="text-[20px] font-bold uppercase tracking-[0.22em]">
+        CONTACT&nbsp;ME
+      </TextRoll>
+    </span>
+
+    <span className="absolute right-1 w-12 h-12 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-52px)] group-hover:rotate-45">
+      <ArrowUpRight size={20} />
+    </span>
+  </button>
+</div>
       </div>
     </header>
   );
