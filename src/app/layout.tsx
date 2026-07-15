@@ -20,8 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://chinmayakumardas.com"),
 
   title: {
-    default:
-      "Chinmaya Kumar Das | • Full Stack Developer • Product Engineer",
+    default: "Chinmaya Kumar Das | • Full Stack Developer • Product Engineer",
     template: "%s | Chinmaya Kumar Das",
   },
 
@@ -120,8 +119,7 @@ export const metadata: Metadata = {
     title:
       "Chinmaya Kumar Das | AI Engineer • Full Stack Developer • Product Engineer",
 
-    description:
-      "AI Engineer • Full Stack Developer • Product Engineer",
+    description: "AI Engineer • Full Stack Developer • Product Engineer",
 
     images: ["/og-image.png"],
   },
@@ -153,12 +151,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(personSchema),
-            }}
-          />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
 
         <script
           type="application/ld+json"
@@ -167,10 +165,8 @@ export default function RootLayout({
           }}
         />
         <LenisProvider>
-            <SiteLayout>
-    {children}
-  </SiteLayout>
-          </LenisProvider>
+          <SiteLayout>{children}</SiteLayout>
+        </LenisProvider>
 
         <GoogleAnalytics gaId="G-5DJS4H3VT4" />
       </body>

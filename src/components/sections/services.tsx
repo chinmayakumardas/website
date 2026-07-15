@@ -1,3 +1,7 @@
+
+
+
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -9,49 +13,47 @@ const navigationItems = [
   {
     name: "Web Design",
     href: "#",
-    description: "[01]",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80",
+   
   },
   {
     name: "UI/UX Design",
     href: "#",
-    description: "[02]",
-    image:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&q=80",
+   
   },
   {
     name: "Web Development",
-    href: "#",
-    description: "[03]",
-    image:
-      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&q=80",
+   
   },
   {
     name: "Brand Identity",
     href: "#",
-    description: "[04]",
-    image:
-      "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1200&q=80",
+   
   },
   {
     name: "Landing Pages",
     href: "#",
-    description: "[05]",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    
   },
   {
     name: "3D & Motion Design",
     href: "#",
-    description: "[06]",
-    image:
-      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&q=80",
+    
   },
 ];
+
 export const Services = () => {
   return (
-    <section id="services" className="bs flex min-h-screen w-full flex-1 flex-col items-center justify-center gap-1.5 rounded-2xl px-7 py-3 backdrop-blur-sm">
+    <section
+      id="services"
+      className="bs flex min-h-screen w-full flex-1 flex-col items-center justify-center gap-1.5 rounded-2xl px-7  backdrop-blur-sm"
+    >
+      {/* Heading */}
+      <div className="min-h-[22vh] flex items-center justify-center">
+        <h1 className="text-black font-semibold tracking-[-0.05em] text-[13vw] md:text-[9vw] lg:text-[6vw] leading-none">
+          RECENT WORKS
+        </h1>
+      </div>
+
       {navigationItems.map((item, index) => (
         <li
           className="relative flex cursor-pointer flex-col items-center overflow-visible"
@@ -66,14 +68,10 @@ export const Services = () => {
             </TextRoll>
           </div>
         </li>
-        
       ))}
     </section>
-    
   );
 };
-
-
 
 const STAGGER = 0.035;
 

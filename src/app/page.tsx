@@ -9,14 +9,14 @@ export default function HomePage() {
     <>
     
 
-      <main>
+  
         <Hero/>
         <AboutMe/>
         <Projects />
         <Services/>
    
         <Contact/>
-      </main>
+ 
 
   
     </>

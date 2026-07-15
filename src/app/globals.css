@@ -1,9 +1,23 @@
-@import "tailwindcss";
+ @import "tailwindcss";
+
+
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-   --primary: oklch(0.527 0.154 150.069);
+   --primary: oklch(59.868% 0.17189 148.329);
   --secondary: #ededed;
 }
 
@@ -18,15 +32,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
 
-      --primary: oklch(0.527 0.154 150.069);
-    --secondary: #171717;
-  }
-}
 
 body {
   background: var(--background);
@@ -42,4 +48,8 @@ a {
 
 button {
   cursor: pointer;
-}
+} 
+
+
+
+

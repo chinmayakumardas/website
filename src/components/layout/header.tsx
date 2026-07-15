@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import Link from "next/link";
@@ -64,63 +62,63 @@ export default function Header() {
   }, []);
 
   // GSAP Smooth Menu Animation
-useEffect(() => {
-  if (!menuRef.current || !overlayRef.current) return;
+  useEffect(() => {
+    if (!menuRef.current || !overlayRef.current) return;
 
-  const tl = gsap.timeline();
+    const tl = gsap.timeline();
 
-  if (isMobileMenuOpen) {
-    gsap.set(overlayRef.current, { opacity: 0 });
-    gsap.set(menuRef.current, { y: 60, opacity: 0 });
+    if (isMobileMenuOpen) {
+      gsap.set(overlayRef.current, { opacity: 0 });
+      gsap.set(menuRef.current, { y: 60, opacity: 0 });
 
-    tl.to(overlayRef.current, {
-      opacity: 1,
-      duration: 0.4,
-      ease: "power2.inOut",
-    }).to(
-      menuRef.current,
-      {
-        y: 0,
+      tl.to(overlayRef.current, {
         opacity: 1,
-        duration: 0.6,
-        ease: "power3.out",
-      },
-      "-=0.15"
-    );
+        duration: 0.4,
+        ease: "power2.inOut",
+      }).to(
+        menuRef.current,
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power3.out",
+        },
+        "-=0.15",
+      );
 
-    gsap.from(".menu-item", {
-      opacity: 0,
-      y: 50,
-      stagger: 0.07,
-      duration: 0.65,
-      ease: "power3.out",
-      delay: 0.25,
-    });
-  } else {
-    tl.to(menuRef.current, {
-      y: 40,
-      opacity: 0,
-      duration: 0.45,
-      ease: "power2.in",
-    }).to(
-      overlayRef.current,
-      {
+      gsap.from(".menu-item", {
         opacity: 0,
-        duration: 0.35,
+        y: 50,
+        stagger: 0.07,
+        duration: 0.65,
+        ease: "power3.out",
+        delay: 0.25,
+      });
+    } else {
+      tl.to(menuRef.current, {
+        y: 40,
+        opacity: 0,
+        duration: 0.45,
         ease: "power2.in",
-      },
-      "-=0.2"
-    );
-  }
+      }).to(
+        overlayRef.current,
+        {
+          opacity: 0,
+          duration: 0.35,
+          ease: "power2.in",
+        },
+        "-=0.2",
+      );
+    }
 
-  return () => {
-    tl.kill();
-  };
-}, [isMobileMenuOpen]);
+    return () => {
+      tl.kill();
+    };
+  }, [isMobileMenuOpen]);
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-transparent">
+    <header className="fixed inset-x-0 top-0 z-50 ">
       <div
-        className={`mx-auto flex h-16 items-center justify-between px-6 md:h-20 md:px-10 transition-colors duration-500 ${
+        className={`mx-auto flex h-16  items-center justify-between px-6 md:h-20 md:px-10 transition-colors duration-500 ${
           isWhite ? "text-white" : "text-black"
         }`}
       >
@@ -133,37 +131,24 @@ useEffect(() => {
           </h1>
         </Link>
 
-        {/* DESKTOP NAV */}
-        <nav className="hidden lg:flex items-center gap-16 xl:gap-24 2xl:gap-28">
-          {links.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => handleScroll(link.id)}
-              className="group flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.22em]"
-            >
-              <span className="opacity-60">[</span>
-              <TextRoll className="inline-block">{link.name}</TextRoll>
-              <span className="opacity-60">]</span>
-            </button>
-          ))}
-        </nav>
+       
 
         {/* DESKTOP CONTACT */}
-        
-<button
-  onClick={() => handleScroll("contact")}
-  className="hidden lg:inline-flex relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer bg-primary text-secondary"
->
-  <span className="relative z-10 transition-all duration-500 flex items-center">
-    <TextRoll className="text-[13px] font-bold uppercase tracking-[0.22em]">
-        CONTACT&nbsp;ME
-    </TextRoll>
-  </span>
 
-  <span className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
-    <ArrowUpRight size={16} />
-  </span>
-</button>
+        <button
+          onClick={() => handleScroll("contact")}
+          className="hidden lg:inline-flex relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer bg-primary text-secondary"
+        >
+          <span className="relative z-10 transition-all duration-500 flex items-center">
+            <TextRoll className="text-[13px] font-bold uppercase tracking-[0.22em]">
+              CONTACT&nbsp;ME
+            </TextRoll>
+          </span>
+
+          <span className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+            <ArrowUpRight size={16} />
+          </span>
+        </button>
         {/* HAMBURGER */}
         <button
           onClick={toggleMenu}
@@ -204,23 +189,22 @@ useEffect(() => {
           ))}
         </nav>
 
-       
         <div className="mt-auto pb-20">
-  <button
-    onClick={() => handleScroll("contact")}
-    className="relative flex items-center text-sm font-medium rounded-full h-14 p-1 ps-7 pe-16 group transition-all duration-500 hover:ps-16 hover:pe-7 w-fit overflow-hidden cursor-pointer bg-primary text-secondary"
-  >
-    <span className="relative z-10 transition-all duration-500 flex items-center">
-      <TextRoll className="text-[20px] font-bold uppercase tracking-[0.22em]">
-        CONTACT&nbsp;ME
-      </TextRoll>
-    </span>
+          <button
+            onClick={() => handleScroll("contact")}
+            className="relative flex items-center text-sm font-medium rounded-full h-14 p-1 ps-7 pe-16 group transition-all duration-500 hover:ps-16 hover:pe-7 w-fit overflow-hidden cursor-pointer bg-primary text-secondary"
+          >
+            <span className="relative z-10 transition-all duration-500 flex items-center">
+              <TextRoll className="text-[20px] font-bold uppercase tracking-[0.22em]">
+                CONTACT&nbsp;ME
+              </TextRoll>
+            </span>
 
-    <span className="absolute right-1 w-12 h-12 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-52px)] group-hover:rotate-45">
-      <ArrowUpRight size={20} />
-    </span>
-  </button>
-</div>
+            <span className="absolute right-1 w-12 h-12 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-52px)] group-hover:rotate-45">
+              <ArrowUpRight size={20} />
+            </span>
+          </button>
+        </div>
       </div>
     </header>
   );
