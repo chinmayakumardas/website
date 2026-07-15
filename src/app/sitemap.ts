@@ -13,12 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
 
-    {
-      url: `${BASE_URL}/about`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+  
 
     {
       url: `${BASE_URL}/projects`,
@@ -40,18 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
 
-    {
-      url: `${BASE_URL}/blog`,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-
-    {
-      url: `${BASE_URL}/contact`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
+ 
+    
   ];
 }

@@ -1,0 +1,9 @@
+name=Chinmaya Kumar Das
+title=AI Engineer & Full Stack Developer
+website=https://chinmayakumardas.com
+
+specialties=AI Engineering, Generative AI, LLMs, AI Agents, Next.js, React, TypeScript, Node.js, SaaS, Automation
+
+github=https://github.com/chinmayakumardas
+linkedin=https://linkedin.com/in/chinmayakumardas2
+x=https://x.com/chinmayakmdas
