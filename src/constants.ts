@@ -18,7 +18,6 @@ export const quickLinks = [
 ];
 export const legalLinks = [
   { label: "PRIVACY POLICY", href: "/privacy-policy" },
-  { label: "TERMS", href: "/terms" },
 ];
 
 export const personSchema = {
